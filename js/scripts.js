@@ -1,5 +1,6 @@
 const targetDate = new Date();
-targetDate.setMonth(targetDate.getMonth() + 2);
+// targetDate.setMonth(targetDate.getMonth() + 2);
+targetDate.setDate(targetDate.getDate() + 1);
 
 const updateCountdown = () => {
 const now = new Date().getTime();
