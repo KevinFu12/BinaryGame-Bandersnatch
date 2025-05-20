@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie - About</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/watch.css">
+
+  <!-- JS -->
+  <script src="js/scripts.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center w-100">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="videos.html" class="nav-link">Videos</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="cast-crew.html" class="nav-link">Cast & Crews</a>
+            </li>
+            <li class="nav-item">
+              <a href="watch.html" class="nav-link active" aria-current="page">Watch Now</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="title-container">
+            <div class="title-bar">
+              <h1 class="title display-6 fw-bold">THE<br>BINARY<br>GAMES</h1>
+              <p class="mt-5 fw-bold">COMING SOON<br>2025</p>
+            </div>
+          </div>
+
+          <div class="countdown-box" id="countdown">
+            <!-- <div class="d-flex flex-wrap justify-content-center gap-3"> -->
+            <div class="countdown-item">
+              <h3 id="months" class="countdown-value">00</h3>
+              <p class="countdown-label">Months</p>
+            </div>
+            <div class="countdown-item">
+              <h3 id="days" class="countdown-value">00</h3>
+              <p class="countdown-label">Days</p>
+            </div>
+            <div class="countdown-item">
+              <h3 id="hours" class="countdown-value">00</h3>
+              <p class="countdown-label">Hours</p>
+            </div>
+            <div class="countdown-item">
+              <h3 id="minutes" class="countdown-value">00</h3>
+              <p class="countdown-label">Minutes</p>
+            </div>
+            <div class="countdown-item">
+              <h3 id="seconds" class="countdown-value">00</h3>
+              <p class="countdown-label">Seconds</p>
+            </div>
+
+          </div>
+          <div class="btn-container">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs" target="_blank"
+              class="btn btn-trailer">
+              Watch the Trailer
+            </a>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <!-- <div class="synopsis-container"> -->
+          <div class="trailer-container text-center">
+            <video autoplay muted loop width="100%" style="max-height: 400px;">
+              <source src="trailer.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="mt-3">(Movie Trailer)</h2>
+            <button class="watch-btn mt-2" onclick="window.open('https://youtube.com', '_blank')">Watch</button>
+            <span class="ms-3">
+              <span
+                style="background-color: #d43f52; border-radius: 50%; display: inline-block; width: 20px; height: 20px;"></span>
+              <span
+                style="background-color: #5c4dff; border-radius: 50%; display: inline-block; width: 20px; height: 20px;"></span>
+              <span
+                style="background-color: #bd3bd2; border-radius: 50%; display: inline-block; width: 20px; height: 20px;"></span>
+              +218K people recommend this show
+            </span>
+          </div>
+
+        </div>
+        <!-- </div> -->
+
+      </div>
+
+    </div>
+    </div>
+  </header>
+
+  <main class="container-fluid">
+    <section class="main-movie my-5">
+      <div id = "scene-container"></div>
+
+      <script>
+        const scenes = {
+          "scene2": {
+            videoId: "_bLhbnozHYQ",
+            choices: [
+              { label: "Reply the message", next: "scene3A"},
+              { label: "Do not reply the message", next: "scene3B"}
+            ]
+          },
+          "scene3A": {
+            videoId: "eofN0NmMIAM",
+            choices: [],
+            next: "scene3C"
+          },
+          "scene3B":{
+            videoId: "3_P4MsGd7Js",
+            choices: [
+              { label: "Take it", next: "scene3C"},
+              { label: "Do not take it", next: "scene3D"}
+            ]
+          },
+          "scene3C":{
+            videoId: "O6slQtDM1JA",
+            choices: [
+              { label: "YES", next: "scene3E"},
+              { label: "NO", next: ""}
+            ]
+          },
+          "scene3D":{
+            videoId: "nR7gUi_Nz_0",
+            choices: [],
+            next: ""
+          },
+          "scene3E":{
+            videoId: "Xtcgordudv8",
+            choices: [],
+            next: "scene4"
+          },
+          "scene4": {
+            videoId: "g8IKOs2PUi4",
+            choices: [
+              { label: "Open ChatGPT", next: "sceneX-1"},
+              { label: "Code It Yourself", next: "scene5A"}
+            ]
+          },
+          "scene5A": {
+            videoId: "SVbQXCCbOhw",
+            choices: [
+              { label: "Open ChatGPT", next: "sceneX-2"},
+              { label: "Code It Yourself", next: "scene5B"}
+            ]
+          },
+          "scene5B": {
+            videoId: "_s8xFgJQOJg",
+            choices: [],
+            next: "scene6"
+          },
+          "scene6":{
+            videoId: "xcKsMXErg1g",
+            choices: [
+              { label: "Get some fresh air", next: "sceneX-X"},
+              { label: "Stay and plan for the next move", next: "scene7"}
+            ]
+          },
+          "scene7":{
+            videoId: "P0RFljRuHtM",
+            choices: [
+              { label: "Open ChatGPT", next: "sceneX-3"},
+              { label: "Code It Yourself", next: "scene8"}
+            ]
+          },
+          "scene8":{
+            videoId: "HqQipCuKK1c",
+            choices: [
+              { label: "Open ChatGPT", next: "sceneX-4"},
+              { label: "Code It Yourself", next: "scene8A"}
+            ]
+          },
+          "scene8A":{
+            videoId: "1UsBSL7tejE",
+            choices: [],
+            next: "scene9"
+          },
+          "scene9":{
+            videoId: "qtF3sTOcuVU",
+            choices: [
+              { label: "YES", next: ""},
+              { label: "NO", next: ""}
+            ]
+          },
+          "sceneX-1": {
+            videoId: "DSdbR2HWYJ0",
+            choices: [],
+            next:"sceneX-X"
+          },
+          "sceneX-2": {
+            videoId: "AC8KbQtHf5w",
+            choices: [],
+            next:"sceneX-X"
+          },
+          "sceneX-3": {
+            videoId: "Fyn8pB84Kl8",
+            choices: [],
+            next:"sceneX-X"
+          },
+          "sceneX-4": {
+            videoId: "QEUHZ75mkTs",
+            choices: [],
+            next:"sceneX-X"
+          },
+          "sceneX-X": {
+            videoId: "HHYCDPRHT1Y",
+            choices: [],
+            next:""
+          }
+        };
+    
+        function loadScene(sceneId) {
+          const scene = scenes[sceneId];
+          const container = document.getElementById("scene-container");
+        
+          if (!scene) {
+            container.innerHTML = "<p>Scene not found.</p>";
+            return;
+          }
+        
+          const hasChoices = scene.choices.length > 0;
+        
+          // Set up base HTML with just the video
+          container.innerHTML = `
+            <div class="video-container">
+              <iframe id="yt-player"
+                      src="https://www.youtube.com/embed/${scene.videoId}?enablejsapi=1&autoplay=1"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+              </iframe>
+            </div>
+            <div class="button-section" id="button-section" style="display: none;"></div>
+          `;
+        
+          waitForYouTubeAPI(() => {
+            const player = new YT.Player('yt-player', {
+              events: {
+                onStateChange: (event) => {
+                  if (event.data === YT.PlayerState.ENDED) {
+                    if (hasChoices) {
+                      // Show choices when video ends
+                      const btnSection = document.getElementById("button-section");
+                      btnSection.innerHTML = scene.choices.map(choice => `
+                        <button class="watch-btn" onclick="loadScene('${choice.next}')">
+                          ${choice.label}
+                        </button>`).join('');
+                      btnSection.style.display = "flex";
+                    } else if (scene.next) {
+                      // Auto-play next if no choices
+                      loadScene(scene.next);
+                    }
+                  }
+                }
+              }
+            });
+          });
+        }
+      
+        // Helper to load YouTube API if not already available
+        function waitForYouTubeAPI(callback) {
+          if (window.YT && window.YT.Player) {
+            callback();
+          } else {
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            document.body.appendChild(tag);
+            window.onYouTubeIframeAPIReady = callback;
+          }
+        }
+      
+        document.addEventListener('DOMContentLoaded', () => loadScene('scene2'));
+      </script>
+      <!-- <div id="scene2" class="scene">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/_bLhbnozHYQ?si=UOSb9e1GGKrTnD5a" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <div class="button-section">
+          <button class="watch-btn">A</button>
+          <button class="watch-btn">B</button>
+        </div>
+      </div> -->
+    </section>
+
+    <section class="gallery-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="gallery-item position-relative">
+              <img src="images/participants.png" alt="Movie still 1" class="img-fluid rounded">
+              <div
+                class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                IT'S
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gallery-item position-relative">
+              <img src="images/pic2.png" alt="Movie still 2" class="img-fluid rounded">
+              <div
+                class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                GAME
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="gallery-item position-relative">
+              <img src="images/constraint1.png" alt="Movie still 3" class="img-fluid rounded">
+              <div
+                class="gallery-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                ON
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
